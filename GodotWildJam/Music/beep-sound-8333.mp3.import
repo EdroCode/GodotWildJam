@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/beep-sound-8333.mp3-5d04ecfb199ce1dad7f13893cfa4625f.mp3str"
+
+[deps]
+
+source_file="res://Music/beep-sound-8333.mp3"
+dest_files=[ "res://.import/beep-sound-8333.mp3-5d04ecfb199ce1dad7f13893cfa4625f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/paper.mp3-724348b806de4805d9ab1d6d6fb3ea64.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Words/paper.mp3"
+dest_files=[ "res://.import/paper.mp3-724348b806de4805d9ab1d6d6fb3ea64.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

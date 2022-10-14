@@ -1,0 +1,116 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ArtWork/5x7_practical.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Words/DeathScene.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxLine" id=2]
+color = Color( 1, 0, 0, 1 )
+
+[node name="DeathScene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 174.0
+margin_top = 158.0
+margin_right = -270.0
+margin_bottom = -92.0
+mouse_filter = 2
+color = Color( 1, 1, 1, 0.054902 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 258.0
+margin_top = 158.0
+margin_right = -183.0
+margin_bottom = -92.0
+mouse_filter = 2
+color = Color( 1, 1, 1, 0.054902 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 154.0
+margin_top = 35.0
+margin_right = 154.0
+margin_bottom = 35.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "YOUR TIME HAS COME TO AN END"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 54.0
+margin_top = 54.0
+margin_right = 54.0
+margin_bottom = 54.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "YOUR SUIT HAS TORN AND YOU HAVE BEEN AFFECTED BY THE VIRUS'S RADIATION"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 168.0
+margin_top = 108.0
+margin_right = 168.0
+margin_bottom = 108.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "DO YOU WANT TO TRY AGAIN?"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 182.0
+margin_top = 163.0
+margin_right = 182.0
+margin_bottom = 163.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "YES"
+
+[node name="Button" type="Button" parent="CanvasLayer/RichTextLabel4"]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = -3.0
+margin_top = -5.0
+margin_right = 22.0
+margin_bottom = 15.0
+custom_styles/normal = SubResource( 2 )
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 273.0
+margin_top = 163.0
+margin_right = 273.0
+margin_bottom = 163.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "NO
+"
+
+[node name="Button2" type="Button" parent="CanvasLayer/RichTextLabel5"]
+margin_left = -7.0
+margin_top = -5.0
+margin_right = 18.0
+margin_bottom = 15.0
+flat = true
+
+[connection signal="button_down" from="CanvasLayer/RichTextLabel4/Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="CanvasLayer/RichTextLabel5/Button2" to="." method="_on_Button2_button_down"]

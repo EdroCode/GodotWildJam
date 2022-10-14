@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/large-metal-lift-door-openingwav-14459.mp3-5a1d5347ba84e8d4121d8524d4accbc0.mp3str"
+
+[deps]
+
+source_file="res://Music/large-metal-lift-door-openingwav-14459.mp3"
+dest_files=[ "res://.import/large-metal-lift-door-openingwav-14459.mp3-5a1d5347ba84e8d4121d8524d4accbc0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

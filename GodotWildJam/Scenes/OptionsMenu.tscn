@@ -1,0 +1,212 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://ArtWork/Sprites/Sprite-0001.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/OptionsMenu.gd" type="Script" id=2]
+[ext_resource path="res://ArtWork/5x7_practical.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ArtWork/Sprites/arrow.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxLine" id=1]
+color = Color( 1, 1, 1, 0.4 )
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id=2]
+color = Color( 1, 1, 1, 0.572549 )
+thickness = 8
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 3 )
+
+[node name="OptionsMenu" type="CanvasLayer"]
+scale = Vector2( 1.4, 1.4 )
+transform = Transform2D( 1.4, 0, 0, 1.4, 0, 0 )
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.0980392, 0.0941176, 0.0941176, 1 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 22.2857
+margin_top = 14.2857
+margin_right = 154.286
+margin_bottom = 48.2857
+custom_fonts/font = SubResource( 7 )
+text = "OPTIONS"
+
+[node name="Volume" type="Label" parent="ColorRect"]
+margin_left = 26.1429
+margin_top = 53.5714
+margin_right = 63.1429
+margin_bottom = 67.5714
+custom_fonts/font = SubResource( 5 )
+text = "VOLUME"
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/Volume"]
+margin_left = -4.0
+margin_top = -2.0
+margin_right = 197.0
+margin_bottom = 11.0
+color = Color( 1, 1, 1, 0.0823529 )
+
+[node name="Volume2" type="Label" parent="ColorRect"]
+margin_left = 26.1429
+margin_top = 98.2857
+margin_right = 62.1429
+margin_bottom = 112.286
+custom_fonts/font = SubResource( 5 )
+text = "KEYS"
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect/Volume2"]
+margin_left = -4.0
+margin_top = -2.0
+margin_right = 198.0
+margin_bottom = 11.0
+color = Color( 1, 1, 1, 0.0823529 )
+
+[node name="MusicSlider" type="Node" parent="ColorRect"]
+
+[node name="HSlider" type="HSlider" parent="ColorRect/MusicSlider"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -182.857
+margin_top = -69.4286
+margin_right = -37.8571
+margin_bottom = -53.4286
+custom_icons/tick = ExtResource( 1 )
+custom_icons/grabber_highlight = ExtResource( 1 )
+custom_icons/grabber = ExtResource( 1 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 2 )
+step = 0.01
+value = 1.0
+rounded = true
+
+[node name="Value" type="Label" parent="ColorRect/MusicSlider"]
+margin_left = 205.143
+margin_top = 69.1194
+margin_right = 245.143
+margin_bottom = 92.1194
+custom_fonts/font = SubResource( 3 )
+text = "100
+"
+
+[node name="Label" type="Label" parent="ColorRect/MusicSlider"]
+margin_left = 22.1429
+margin_top = 69.5714
+margin_right = 62.1429
+margin_bottom = 83.5714
+custom_fonts/font = SubResource( 4 )
+text = "Sound"
+
+[node name="Keys" type="Node" parent="ColorRect"]
+
+[node name="Label" type="Label" parent="ColorRect/Keys"]
+margin_left = 22.1429
+margin_top = 119.286
+margin_right = 62.1429
+margin_bottom = 133.286
+custom_fonts/font = SubResource( 6 )
+text = "LEFT|"
+
+[node name="Label3" type="Label" parent="ColorRect/Keys"]
+margin_left = 75.1429
+margin_top = 119.286
+margin_right = 115.143
+margin_bottom = 133.286
+custom_fonts/font = SubResource( 6 )
+text = "[ A/< ]"
+
+[node name="Label2" type="Label" parent="ColorRect/Keys"]
+margin_left = 22.1429
+margin_top = 130.286
+margin_right = 77.1429
+margin_bottom = 144.286
+custom_fonts/font = SubResource( 6 )
+text = "RIGHT|"
+
+[node name="Label4" type="Label" parent="ColorRect/Keys"]
+margin_left = 67.1429
+margin_top = 130.286
+margin_right = 122.143
+margin_bottom = 144.286
+custom_fonts/font = SubResource( 6 )
+text = "  [ D/> ]"
+
+[node name="Label5" type="Label" parent="ColorRect/Keys"]
+margin_left = 22.1429
+margin_top = 141.286
+margin_right = 77.1429
+margin_bottom = 155.286
+custom_fonts/font = SubResource( 6 )
+text = "JUMP|"
+
+[node name="Label6" type="Label" parent="ColorRect/Keys"]
+margin_left = 75.1429
+margin_top = 141.286
+margin_right = 132.143
+margin_bottom = 155.286
+custom_fonts/font = SubResource( 6 )
+text = "[ SPACE/W ]"
+
+[node name="Label7" type="Label" parent="ColorRect/Keys"]
+margin_left = 22.1429
+margin_top = 152.286
+margin_right = 77.1429
+margin_bottom = 166.286
+custom_fonts/font = SubResource( 6 )
+text = "FIRE|"
+
+[node name="Label8" type="Label" parent="ColorRect/Keys"]
+margin_left = 75.1429
+margin_top = 152.286
+margin_right = 130.143
+margin_bottom = 166.286
+custom_fonts/font = SubResource( 6 )
+text = "[ Z ]"
+
+[node name="Label9" type="Label" parent="ColorRect/Keys"]
+margin_left = 22.1429
+margin_top = 163.286
+margin_right = 77.1429
+margin_bottom = 177.286
+custom_fonts/font = SubResource( 6 )
+text = "INTERACT|"
+
+[node name="Label10" type="Label" parent="ColorRect/Keys"]
+margin_left = 75.1429
+margin_top = 163.286
+margin_right = 130.143
+margin_bottom = 177.286
+custom_fonts/font = SubResource( 6 )
+text = "[ E ]"
+
+[node name="Button" type="Button" parent="ColorRect"]
+margin_left = 2.0
+margin_top = 12.0
+margin_right = 105.0
+margin_bottom = 34.0
+icon = ExtResource( 4 )
+flat = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="value_changed" from="ColorRect/MusicSlider/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="button_down" from="ColorRect/Button" to="." method="_on_Button_button_down"]

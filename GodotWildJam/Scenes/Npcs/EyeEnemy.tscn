@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Npcs/NuclearEnemy.gd" type="Script" id=2]
+[ext_resource path="res://Music/zombie-15965.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Music/dying-monster-101276.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Music/shotgun-firing-3-14483.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Music/zmb2_dead-92305.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/Words/pistol-cock-6014.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Objects/Eye.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 118.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 11, 14 )
+
+[node name="NuclearEnemy" type="KinematicBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource( 2 )
+
+[node name="Eye" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, -13.5 )
+shape = SubResource( 1 )
+
+[node name="PatrolTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="ShotDelay" type="Timer" parent="."]
+wait_time = 0.7
+
+[node name="Rotate" type="Node2D" parent="."]
+
+[node name="ShotPos" type="Position2D" parent="Rotate"]
+position = Vector2( 15, -7 )
+
+[node name="PlayerDetect" type="Area2D" parent="Rotate"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotate/PlayerDetect"]
+modulate = Color( 0.529412, 0.196078, 0.196078, 1 )
+position = Vector2( 118.5, -10 )
+shape = SubResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="Rotate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotate/Area2D"]
+modulate = Color( 0.290196, 1, 0, 1 )
+position = Vector2( 2, -14 )
+shape = SubResource( 9 )
+
+[node name="ZombieGrunt" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 2, -14 )
+stream = ExtResource( 3 )
+volume_db = 5.0
+
+[node name="ZombieGrunt2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 2, -14 )
+stream = ExtResource( 4 )
+volume_db = 5.0
+
+[node name="ShotSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="ZombieDead" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = -5.0
+
+[node name="ReloadSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[connection signal="timeout" from="PatrolTimer" to="." method="_on_PatrolTimer_timeout"]
+[connection signal="timeout" from="ShotDelay" to="." method="_on_ShotDelay_timeout"]
+[connection signal="body_entered" from="Rotate/PlayerDetect" to="." method="_on_PlayerDetect_body_entered"]
+[connection signal="area_entered" from="Rotate/Area2D" to="." method="_on_Area2D_area_entered"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dripping-water-nature-sounds-8050.mp3-8efa31fbebafd64ad15ca2bdc03e3e59.mp3str"
+
+[deps]
+
+source_file="res://Music/dripping-water-nature-sounds-8050.mp3"
+dest_files=[ "res://.import/dripping-water-nature-sounds-8050.mp3-8efa31fbebafd64ad15ca2bdc03e3e59.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
