@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/YellowPotion.png-8af9016496c230501b4e9888f8dc5590.stex"
+path="res://.import/EmptyInventorySlot.png-3e49c60807d728b55782d6650cc8b122.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/Assets/Items/YellowPotion.png"
-dest_files=[ "res://.import/YellowPotion.png-8af9016496c230501b4e9888f8dc5590.stex" ]
+source_file="res://Game/Assets/Items/EmptyInventorySlot.png"
+dest_files=[ "res://.import/EmptyInventorySlot.png-3e49c60807d728b55782d6650cc8b122.stex" ]
 
 [params]
 

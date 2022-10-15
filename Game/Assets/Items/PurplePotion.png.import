@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BluePotion.png-2e5074dcc0d42904c3075b9bb1e60684.stex"
+path="res://.import/PurplePotion.png-18bf10049a5d1fc56c2a3a1dd77ff3f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/Assets/Items/BluePotion.png"
-dest_files=[ "res://.import/BluePotion.png-2e5074dcc0d42904c3075b9bb1e60684.stex" ]
+source_file="res://Game/Assets/Items/PurplePotion.png"
+dest_files=[ "res://.import/PurplePotion.png-18bf10049a5d1fc56c2a3a1dd77ff3f1.stex" ]
 
 [params]
 

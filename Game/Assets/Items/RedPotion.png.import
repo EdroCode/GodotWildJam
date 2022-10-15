@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RedPotion.png-c9901f0f9c3439ea7b870f610231407f.stex"
+path="res://.import/RedPotion.png-a3f33d64bb1d80b911c78ed49601cc98.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/Assets/Items/RedPotion.png"
-dest_files=[ "res://.import/RedPotion.png-c9901f0f9c3439ea7b870f610231407f.stex" ]
+source_file="res://Game/Assets/Items/RedPotion.png"
+dest_files=[ "res://.import/RedPotion.png-a3f33d64bb1d80b911c78ed49601cc98.stex" ]
 
 [params]
 

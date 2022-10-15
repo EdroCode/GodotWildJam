@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/EmptyInventorySlot.png-64f0a65a924b2930bd3837ad0e872ae3.stex"
+path="res://.import/GreenPotion.png-643647bcf1498d84a33a311b9cbb027f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/Assets/Items/EmptyInventorySlot.png"
-dest_files=[ "res://.import/EmptyInventorySlot.png-64f0a65a924b2930bd3837ad0e872ae3.stex" ]
+source_file="res://Game/Assets/Items/GreenPotion.png"
+dest_files=[ "res://.import/GreenPotion.png-643647bcf1498d84a33a311b9cbb027f.stex" ]
 
 [params]
 

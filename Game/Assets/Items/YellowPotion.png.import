@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GreenPotion.png-81d23f9d9258370c161144bc786a4784.stex"
+path="res://.import/YellowPotion.png-dd1dd2afd07c715fdd55afed22678e79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/Assets/Items/GreenPotion.png"
-dest_files=[ "res://.import/GreenPotion.png-81d23f9d9258370c161144bc786a4784.stex" ]
+source_file="res://Game/Assets/Items/YellowPotion.png"
+dest_files=[ "res://.import/YellowPotion.png-dd1dd2afd07c715fdd55afed22678e79.stex" ]
 
 [params]
 
