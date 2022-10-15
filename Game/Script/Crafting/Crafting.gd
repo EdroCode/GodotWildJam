@@ -1,29 +1,26 @@
 
 enum Items {
-	ITEM1,
-	ITEM2,
-	ITEM3,
+	ITEM1 = 0x3301
+	ITEM2 = 0x4402,
+	ITEM3 = 0x8804,
 	ITEM4,
 	ITEM5,
-	ITEM6,
+	ITEM6 = 0xFF07,
 	ITEM7,
 	ITEM8,
 	ITEM9,
-	BAD_ITEM
+	BAD_ITEM = 0xDEAD
 }
+var chosen_recipe: Array = [0, 0, 0] 
 
-var Recipes = { Items.ITEM6: [Items.ITEM1, Items.ITEM2, Items.ITEM3]}
+func combine():
+	return chosen_recipe[0] ^ (chosen_recipe[1] ^ chosen_recipe[2])
 
-
-func craft(item_arr, wanted_item):
-	if !Recipes.has(wanted_item):
+func craft(wanted_item):
+	if !Items.has(wanted_item):
 		return Items.BAD_ITEM
-	if item_arr == Recipes[wanted_item]:
-		return wanted_item
-	elif Recipes[wanted_item].has(item_arr[0]):
-		for item in item_arr:
-			if !Recipes[wanted_item].has(item):
-				return Items.BAD_ITEM
-		return wanted_item
+	var combination = combine()
+	if wanted_item == (wanted_item  & combination):
+		return wanted_item 
 	else:
 		return Items.BAD_ITEM
