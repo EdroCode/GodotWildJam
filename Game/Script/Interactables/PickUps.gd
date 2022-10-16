@@ -14,4 +14,4 @@ func add_to_inventory(pickup):
 	for i in inventory.items:
 		if inventory.items[i] == null:
 			inventory.set_item(i, pickup)
-			inventoryDisplay.update_inventory_display()
+			inventory.inventoryDisplay.update_inventory_display()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game/Assets/Untitled_Artwork-2.png" type="Texture" id=1]
-[ext_resource path="res://Game/Scenes/BushSystem.gd" type="Script" id=2]
+[ext_resource path="res://Game/Script/BushSystem.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 233.5, 179 )

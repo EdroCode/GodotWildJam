@@ -1,6 +1,6 @@
 extends CenterContainer
 
-var inventory = preload("res://Script/Inventory.tres")
+var inventory = preload("res://Game/Script/Inventory/Inventory.tres")
 
 onready var itemTextureRect = $ItemTextureRect
 onready var itemAmountLabel = $ItemTextureRect/ItemAmountLabel

@@ -78,3 +78,4 @@ func _on_SearchZone_body_exited(body):
 	if body.is_in_group("Player"):
 		
 		playerIsInArea = false
+	
