@@ -33,7 +33,7 @@ func _initialize_idle():
 	#anim_nxt = "Idle"
 
 func _state_idle(delta):
-	if Input.is_action_pressed("Down") or Input.is_action_pressed("Up") or Input.is_action_pressed("Right") or Input.is_action_pressed("Left"):
+	if Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 		_initialize_run()
 
 func _initialize_run():
@@ -42,13 +42,13 @@ func _initialize_run():
 
 func _state_run(delta):
 	
-	if Input.is_action_pressed("Down"):
+	if Input.is_action_pressed("ui_down"):
 		vel.y += 1
-	if Input.is_action_pressed("Up"):
+	if Input.is_action_pressed("ui_up"):
 		vel.y -= 1
-	if Input.is_action_pressed("Right"):
+	if Input.is_action_pressed("ui_right"):
 		vel.x += 1
-	if Input.is_action_pressed("Left"):
+	if Input.is_action_pressed("ui_left"):
 		vel.x -= 1
 	if vel == Vector2.ZERO:
 		_initialize_idle()
