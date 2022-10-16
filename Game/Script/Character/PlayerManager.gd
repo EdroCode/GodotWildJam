@@ -28,7 +28,6 @@ func _physics_process(delta):
 			_state_run(delta)
 
 func _initialize_idle():
-	print("Idle")
 	state_nxt = STATES.IDLE
 	#anim_nxt = "Idle"
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Assets/Untitled_Artwork.png" type="Texture" id=2]
+[ext_resource path="res://Game/Scenes/Bush.tscn" type="PackedScene" id=3]
+
+[node name="Map" type="Node2D"]
+
+[node name="UntitledArtwork" type="Sprite" parent="."]
+position = Vector2( 603, 297 )
+texture = ExtResource( 2 )
+
+[node name="Bush" parent="." instance=ExtResource( 3 )]
+position = Vector2( 871, 324 )
+numberOfItems = 1
+
+[node name="Bush2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 215, 235 )
+numberOfItems = 1
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 588, 326 )
+scale = Vector2( 0.7, 0.7 )
