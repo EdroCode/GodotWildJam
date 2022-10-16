@@ -3,7 +3,7 @@ enum STATES {IDLE, RUN}
 var state_cur : int
 var state_nxt : int
 var anim_cur = ""
-var anim_nxt = "Idle"
+var anim_nxt = "Idle(down)"
 var vel = Vector2.ZERO
 var speed = 200
 var acceleration = 2000
@@ -29,7 +29,7 @@ func _physics_process(delta):
 
 func _initialize_idle():
 	state_nxt = STATES.IDLE
-	#anim_nxt = "Idle"
+	anim_nxt = "Idle(down)"
 
 func _state_idle(delta):
 	if Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
@@ -37,18 +37,24 @@ func _state_idle(delta):
 
 func _initialize_run():
 	state_nxt = STATES.RUN
-	#anim_nxt = "Run"
+	
 
 func _state_run(delta):
 	
 	if Input.is_action_pressed("ui_down"):
 		vel.y += 1
+		anim_nxt = "Run(down)"
 	if Input.is_action_pressed("ui_up"):
 		vel.y -= 1
+		anim_nxt = "Run(Up)"
 	if Input.is_action_pressed("ui_right"):
 		vel.x += 1
+		anim_nxt = "Run(Side)"
+		$Sprite.flip_h = false
 	if Input.is_action_pressed("ui_left"):
 		vel.x -= 1
+		anim_nxt = "Run(Side)"
+		$Sprite.flip_h = true
 	if vel == Vector2.ZERO:
 		_initialize_idle()
 	

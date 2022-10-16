@@ -20,4 +20,4 @@ numberOfItems = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 588, 326 )
-scale = Vector2( 0.7, 0.7 )
+scale = Vector2( 0.5, 0.5 )
