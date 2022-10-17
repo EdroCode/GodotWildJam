@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Enemy
 
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
@@ -8,11 +9,13 @@ export var WANDER_TARGET_RANGE = 4
 enum {
 	IDLE,
 	WANDER,
-	CHASE
+	CHASE,
+	ATTACK
 }
 
 var velocity = Vector2.ZERO
 var state = IDLE
+var attacking = false
 
 onready var wanderController = $WanderController
 onready var playerDetectionZone = $PlayerDetectionZone
@@ -37,10 +40,14 @@ func _physics_process(delta):
 				update_wander()
 		CHASE:
 			var player = playerDetectionZone.player
+			if attacking:
+				state = ATTACK
 			if player !=null:
 				accelerate_towards_point(player.global_position, delta)
 			else:
 				state = IDLE
+		ATTACK:
+			attack_state()
 	
 	velocity = move_and_slide(velocity)
 
@@ -59,3 +66,15 @@ func seek_player():
 func update_wander():
 	state = pick_random_state([IDLE, WANDER])
 	wanderController.start_wander_timer(rand_range(1, 3))
+
+func attack_state():
+	pass
+
+func _on_AttackZone_body_entered(body):
+	if body.name == 'Player':
+		attacking = true
+
+func _on_AttackZone_body_exited(body):
+	if body.name == 'Player':
+		attacking = false
+	state = pick_random_state([IDLE, WANDER])
