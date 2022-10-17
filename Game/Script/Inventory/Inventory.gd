@@ -1,9 +1,10 @@
-extends Resource
-class_name Inventory
+extends Node
 
 var drag_data = null
 
 signal items_changed(indexes)
+func _ready():
+	get_node("/root/Map/Bush").connect("_add_item", self, "set_item")
 
 export(Array, Resource) var items = [
 	null, null, null, null, null, null, null, null, null
