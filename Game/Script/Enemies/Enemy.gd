@@ -24,7 +24,6 @@ func _ready():
 	state = pick_random_state([IDLE, WANDER])
 
 func _physics_process(delta):
-	
 	match state:
 		IDLE:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -33,16 +32,17 @@ func _physics_process(delta):
 				update_wander()
 		WANDER:
 			seek_player()
+			accelerate_towards_point(wanderController.target_position, delta)
+			print('wandering')
 			if wanderController.get_time_left() == 0:
 				update_wander()
-			accelerate_towards_point(wanderController.target_position, delta)
 			if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
 				update_wander()
 		CHASE:
 			var player = playerDetectionZone.player
 			if attacking:
 				state = ATTACK
-			if player !=null:
+			if !(player == null):
 				accelerate_towards_point(player.global_position, delta)
 			else:
 				state = IDLE
@@ -65,7 +65,7 @@ func seek_player():
 
 func update_wander():
 	state = pick_random_state([IDLE, WANDER])
-	wanderController.start_wander_timer(rand_range(1, 3))
+	wanderController.start_wander_timer(1)
 
 func attack_state():
 	pass
