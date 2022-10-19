@@ -8,8 +8,8 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 320.0
-margin_bottom = 180.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -17,7 +17,7 @@ size_flags_vertical = 3
 [node name="InventoryDisplay" parent="CenterContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 133.0
-margin_top = 63.0
-margin_right = 187.0
-margin_bottom = 117.0
+margin_left = 362.0
+margin_top = 150.0
+margin_right = 662.0
+margin_bottom = 450.0

@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="CraftingSlotDisplay" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ItemTextureRect" type="TextureRect" parent="."]
+margin_left = 487.0
+margin_top = 275.0
+margin_right = 537.0
+margin_bottom = 325.0
+rect_min_size = Vector2( 50, 50 )
