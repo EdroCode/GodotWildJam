@@ -1,30 +1,99 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game/Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Game/Assets/Untitled_Artwork.png" type="Texture" id=2]
-[ext_resource path="res://Game/Scenes/Interactables/Bush.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Assets/Background assets/IMG_3120.PNG" type="Texture" id=2]
+[ext_resource path="res://Game/Assets/Background assets/bush1.png" type="Texture" id=3]
 [ext_resource path="res://Game/Script/World/World.gd" type="Script" id=4]
-[ext_resource path="res://Game/Scenes/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Scenes/Camera2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Scenes/PickUps/Rubbish.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Scenes/Enemies/FollowEnemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Scenes/Interactable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Scenes/Interactables/Bush.tscn" type="PackedScene" id=9]
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="UntitledArtwork" type="Sprite" parent="."]
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="UntitledArtwork" type="Sprite" parent="Floor"]
 position = Vector2( 603, 297 )
 texture = ExtResource( 2 )
+
+[node name="UntitledArtwork2" type="Sprite" parent="Floor"]
+position = Vector2( -107, 297 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork3" type="Sprite" parent="Floor"]
+position = Vector2( 603, 967 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork4" type="Sprite" parent="Floor"]
+position = Vector2( -107, 967 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork5" type="Sprite" parent="Floor"]
+position = Vector2( 2023, 297 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork6" type="Sprite" parent="Floor"]
+position = Vector2( 1313, 297 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork7" type="Sprite" parent="Floor"]
+position = Vector2( 2023, 967 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork8" type="Sprite" parent="Floor"]
+position = Vector2( 1313, 967 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork9" type="Sprite" parent="Floor"]
+position = Vector2( 603, -1043 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork10" type="Sprite" parent="Floor"]
+position = Vector2( -107, -1043 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork11" type="Sprite" parent="Floor"]
+position = Vector2( 603, -373 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork12" type="Sprite" parent="Floor"]
+position = Vector2( -107, -373 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork13" type="Sprite" parent="Floor"]
+position = Vector2( 2023, -1043 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork14" type="Sprite" parent="Floor"]
+position = Vector2( 1313, -1043 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork15" type="Sprite" parent="Floor"]
+position = Vector2( 2023, -373 )
+texture = ExtResource( 2 )
+
+[node name="UntitledArtwork16" type="Sprite" parent="Floor"]
+position = Vector2( 1313, -373 )
+texture = ExtResource( 2 )
+
+[node name="Interactable" parent="." instance=ExtResource( 8 )]
+position = Vector2( 879, 232 )
+texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 588, 326 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 100, 400 )
-
 [node name="Rubbish" parent="." instance=ExtResource( 6 )]
 position = Vector2( 500, 200 )
 
-[node name="Bush" parent="." instance=ExtResource( 3 )]
-position = Vector2( 900, 300 )
+[node name="FollowEnemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 234, 341 )
 
-[connection signal="kill_player" from="Enemy" to="." method="_on_Enemy_kill_player"]
+[node name="CameraShake" parent="." instance=ExtResource( 5 )]
+
+[node name="Bush" parent="." instance=ExtResource( 9 )]
+position = Vector2( -276, -45 )

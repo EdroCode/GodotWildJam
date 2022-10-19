@@ -6,7 +6,7 @@ var vals = preload("res://Game/Script/Inventory/ItemVars.gd").new()
 export var numberOfItems : int
 export (int) var item_val
 signal _add_item
-
+export(Texture) var texture
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_page_down"):
@@ -14,8 +14,13 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Search"):
 		if playerIsInArea == true:
 			Search()
+	
+	
+	$Sprite.texture = texture
 
 func Search():
+	
+	$AnimationPlayer.play("Searching")
 	var luck = int(rand_range(0,2))
 	if numberOfItems > 0:
 		if luck == 0:
@@ -41,3 +46,33 @@ func _on_SearchZone_body_exited(body):
 	if body.is_in_group("Player"):
 		playerIsInArea = false
 		
+
+
+
+
+
+
+
+
+
+#====================
+#        VFX
+#====================
+
+
+
+
+func leaf_particle():
+	
+	var p = preload("res://Game/Scenes/Particles/leafparticle1.tscn").instance()
+	p.position = position
+	get_parent().add_child(p)
+	
+	
+
+
+
+
+
+
+

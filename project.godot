@@ -39,6 +39,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Inventory="*res://Game/Script/Inventory/Inventory.gd"
+Globals="*res://Game/Script/Globals.gd"
 
 [gui]
 
