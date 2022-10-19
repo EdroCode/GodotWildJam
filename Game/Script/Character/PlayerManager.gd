@@ -9,6 +9,8 @@ var speed = 200
 var acceleration = 2000
 var friction = acceleration / speed
 
+signal quick_check
+
 onready var anim = $AnimationPlayer
 
 func _ready():
@@ -34,6 +36,8 @@ func _initialize_idle():
 func _state_idle(delta):
 	if Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 		_initialize_run()
+	if Input.is_action_pressed("quick_check"):
+		emit_signal("quick_check")
 
 func _initialize_run():
 	state_nxt = STATES.RUN

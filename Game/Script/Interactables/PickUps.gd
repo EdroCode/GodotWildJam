@@ -1,17 +1,9 @@
 extends Area2D
-
-var inventory = preload("res://Game/Script/Inventory/Inventory.gd")
-var inventoryDisplay = preload("res://Game/Script/Inventory/InventoryDisplay.gd")
-
-export(Resource) var item = null
-
+var vals = preload("res://Game/Script/Inventory/ItemVars.gd").new()
+var item = vals.Items.ITEM1
+signal _add_item
 func _on_PickUps_body_entered(body):
 	if body.name == 'Player':
-		add_to_inventory(item)
+		emit_signal("_add_item", item, 0)
 		queue_free()
 
-func add_to_inventory(pickup):
-	for i in inventory.items:
-		if inventory.items[i] == null:
-			inventory.set_item(i, pickup)
-			inventory.inventoryDisplay.update_inventory_display()

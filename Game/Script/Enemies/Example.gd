@@ -1,4 +1,5 @@
 extends "res://Game/Script/Enemies/Enemy.gd"
+
 signal kill_player
 func attack():
 	print("Gotcha!")

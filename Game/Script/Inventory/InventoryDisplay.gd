@@ -4,11 +4,12 @@ var inventory = preload("res://Game/Script/Inventory/Inventory.tres")
 
 func _ready():
 	inventory.connect("items_changed", self, "_on_items_changed")
+	inventory.connect("update_inventory_display", self, update_inventory_display())
 	inventory.make_items_unique()
 	update_inventory_display()
 
 func update_inventory_display():
-	for item_index in inventory.items.size():
+	for item_index in range(0,8):
 		update_inventory_slot_display(item_index)
 
 func update_inventory_slot_display(item_index):
