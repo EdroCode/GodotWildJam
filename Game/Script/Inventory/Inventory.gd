@@ -17,10 +17,10 @@ func most_recent_items():
 	print(items.slice(1,4))
 #shifts array right
 func shift_array():
-	var arr = items.slice(1,8)
-	for i in range(1, 8):
-		items[i+1] = arr[i]
-	swap_items(0,1)
+	var arr = items.slice(0,9)
+	for i in range(1, 9):
+		items[i] = arr[i-1]
+	#swap_items(0,1)
 
 
 func set_item(item_index, item):

@@ -2,10 +2,11 @@ extends StaticBody2D
 var stopSearch : bool = false
 var canSearch : bool = false
 var playerIsInArea : bool = false
+var vals = preload("res://Game/Script/Inventory/ItemVars.gd").new()
 export var numberOfItems : int
+export (int) var item_val
 signal _add_item
-func _ready():
-	pass
+
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_page_down"):
@@ -23,7 +24,7 @@ func Search():
 			numberOfItems -= 1
 		elif luck == 1:
 			numberOfItems -= 1
-			emit_signal("_add_item", 1, 0)
+			emit_signal("_add_item", 0, item_val)
 	elif numberOfItems <= 0:
 		numberOfItems = 0
 		print("You alredy search this")
@@ -39,3 +40,4 @@ func _on_SearchZone_body_entered(body):
 func _on_SearchZone_body_exited(body):
 	if body.is_in_group("Player"):
 		playerIsInArea = false
+		

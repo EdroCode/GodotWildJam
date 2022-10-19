@@ -1,6 +1,6 @@
 extends Node
 # Singleton handling State of all Active and 
-# Interctable Objects.
+# Interctable .
 
 onready var groups = []
 onready var Player = get_tree().get_nodes_in_group("Player")
