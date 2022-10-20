@@ -14,9 +14,8 @@ func display_item(item):
 		itemTextureRect.texture = load("res://Assets/Items/EmptyInventorySlot.png")
 		itemAmountLabel.text = ""
 
-func get_drag_data(_position):
-	var item_index = get_index()
-	var item = 0 #remove_item(item_index)
+func drag_item(item, item_index):
+	var drag_data = null
 	if item is Item:
 		var data = {}
 		data.item = item
@@ -24,7 +23,7 @@ func get_drag_data(_position):
 		var dragPreview = TextureRect.new()
 		dragPreview.texture = item.texture
 		set_drag_preview(dragPreview)
-		#drag_data = data
+		drag_data = data
 		return data
 
 func can_drop_data(_position, data):

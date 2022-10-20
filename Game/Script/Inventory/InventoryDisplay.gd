@@ -2,6 +2,7 @@ extends GridContainer
 
 #var inventory = preload("res://Game/Script/Inventory/Inventory.tres")
 var valid_items = preload("res://Game/Script/Inventory/ItemVars.gd").new()
+var inv_slots = preload("res://Game/Scenes/UI/InventorySlotDisplay.tscn")
 export (Array, Resource) var items_res = [
 	load("res://Game/Assets/Items/BluePotion.tres"), null,  null,  null,  null,  null,  null,  null,  null    
 ]
@@ -25,6 +26,7 @@ func _ready():
 
 func update_inventory_display(items):
 	for item_index in items:
+		
 		update_inventory_slot_display(item_index)
 
 func update_inventory_slot_display(item_index):
@@ -36,6 +38,12 @@ func update_inventory_slot_display(item_index):
 func _on_items_changed(indexes):
 	for item_index in indexes:
 		update_inventory_slot_display(item_index)
+
+func get_drag_data(_position):
+	var item_index = get_index()
+	if items_res[item_index] == null:
+		return
+	inv_slots.drag_item(items_res[item_index], item_index)
 
 #func _unhandled_input(event):
 	#if event.is_action_released("ui_left_mouse"):

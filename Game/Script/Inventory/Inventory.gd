@@ -50,7 +50,7 @@ func swap_items(item_index, target_item_index):
 func remove_item(item_index):
 	var previousItem = items[item_index]
 	items[item_index] = null
-	#emit_signal("items_changed", [item_index])
+	#emit_signal("items_removed", previousItem)
 	inv_ui.update_inventory_slot_display([item_index])
 	return previousItem
 
