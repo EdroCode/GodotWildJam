@@ -29,12 +29,12 @@ func drag_item(item, item_index):
 func can_drop_data(_position, data):
 	return data is Dictionary and data.has("item")
 
-func drop_data(_position, data):
-	var my_item_index = get_index()
-	var my_item = 0 #inventory.items[my_item_index]
+#func drop_data(_position, data):
+	#var my_item_index = get_index()
+	#var my_item = items[my_item_index]
 	
-	if my_item is Item and my_item.name == data.item.name:
-		my_item.amount += data.item.amount
+	#if my_item is Item and my_item.name == data.item.name:
+		#my_item.amount += data.item.amount
 		#inventory.emit_signal("items_changed", [my_item_index])
 	#else:
 		#inventory.swap_items(my_item_index, data.item_index)

@@ -17,6 +17,7 @@ func _ready():
 	get_node("/root/Map/Rubbish").connect("_add_item", self, "set_item")
 	#inv_ui.make_items_unique(items)
 	inv_ui.update_inventory_display(items)
+	inv_ui.connect("_set_item", self, "set_item")
 onready var inv_ui = get_node("/root/Map/GUI/UI/InventoryContainer/CenterContainer/InventoryDisplay")
 
 func _on_Player_call_inv_menu():

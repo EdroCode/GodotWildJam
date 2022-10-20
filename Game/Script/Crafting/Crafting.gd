@@ -12,7 +12,13 @@ enum Items {
 	BAD_ITEM
 }
 
-var Recipes = { Items.ITEM6: [Items.ITEM1, Items.ITEM2, Items.ITEM3]}
+var Recipes = { 
+	Items.ITEM6: [Items.ITEM1, Items.ITEM2, Items.ITEM3],
+	Items.ITEM7: [Items.ITEM2, Items.ITEM5, Items.ITEM4],
+	Items.ITEM8: [Items.ITEM6, Items.Item2, Items.ITEM5],
+	Items.ITEM9: [Items.ITEM4, Items.ITEM1, Items.ITEM1],
+	Items.ITEM4: [Items.ITEM3, Items.ITEM3, Items.ITEM1],
+	}
 
 
 func craft(item_arr, wanted_item):

@@ -3,6 +3,8 @@ extends GridContainer
 #var inventory = preload("res://Game/Script/Inventory/Inventory.tres")
 var valid_items = preload("res://Game/Script/Inventory/ItemVars.gd").new()
 var inv_slots = preload("res://Game/Scenes/UI/InventorySlotDisplay.tscn")
+var drag_data = null
+signal _set_item
 export (Array, Resource) var items_res = [
 	load("res://Game/Assets/Items/BluePotion.tres"), null,  null,  null,  null,  null,  null,  null,  null    
 ]
@@ -45,8 +47,14 @@ func get_drag_data(_position):
 		return
 	inv_slots.drag_item(items_res[item_index], item_index)
 
-#func _unhandled_input(event):
-	#if event.is_action_released("ui_left_mouse"):
-		
-		#if inventory.drag_data is Dictionary:
-			#inventory.set_item(inventory.drag_data.item_index, inventory.drag_data.item)
+func drop_data(_position, data):
+	var my_item_index = get_index()
+	var my_item = items_res[my_item_index]
+	if my_item is Item and my_item.name == data.item.name:
+		my_item.amount += data.item.amount
+
+func _unhandled_input(event):
+	if event.is_action_released("ui_left_mouse"):
+		if drag_data is Dictionary:
+			emit_signal("_swap_item", my_item_index, data.item_index)
+			emit_signal("_set_item", drag_data.item_index, drag_data.item)
