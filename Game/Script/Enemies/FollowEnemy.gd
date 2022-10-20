@@ -25,9 +25,7 @@ func _on_Enemy_attack_player():
 
 
 
-onready var _b1 := get_parent().get_node("FollowEnemy")
-onready var _b2 := get_parent().get_node("Player")
-var direction := ""
+var direction = Vector2.ZERO
 var playerIsRunning
 var lastDirection
 
@@ -35,17 +33,24 @@ onready var anim = $AnimationPlayer
 
 func _physics_process(delta):
 	
-	# Angle Calculation
-	var angle = _b1.position.angle_to_point(_b2.position)
 	
 	
 	
-	if angle >= 0.1:
-		direction = "up"
-		lastDirection = "up"
-	elif angle <= -0.1:
+	
+	if velocity.y >= 0.01:
+		
 		direction = "down"
-		lastDirection = "down"
+		
+	elif velocity.y <= -0.01:
+		
+		direction = "up"
+		
+	
+	
+	if velocity.x == 0 and velocity.y == 0:
+		
+		anim.play("Idle")
+	
 	
 	
 	if playerIsRunning == true:
@@ -61,20 +66,6 @@ func _physics_process(delta):
 			anim.play("RunDown")
 			
 		
-	else:
-		
-		
-		
-		if lastDirection == "up":
-			
-			anim.play("IdleUp")
-			
-		elif lastDirection == "down":
-			
-			anim.play("IdleDown")
-			
-	
-	
 	
 	  
 
@@ -91,7 +82,7 @@ func shake():
 	
 	
 	Globals.camera.shake(300, .5, 300)
-
+ 
 
 
 #==============================
@@ -103,8 +94,9 @@ func rock_effect():
 	
 	var p = preload("res://Game/Scenes/Particles/RockParticles.tscn").instance()
 	p.position = $feetPos.global_position
-	get_parent().add_child(p)
+	$feetPos.add_child(p)
+	 
 	
 	
 	
-	
+

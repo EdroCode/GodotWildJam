@@ -8,6 +8,7 @@ export (int) var item_val
 signal _add_item
 export(Texture) var texture
 
+
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_page_down"):
 		restart()

@@ -67,10 +67,10 @@ func update_wander():
 	wanderController.start_wander_timer(1)
 
 func _on_AttackZone_body_entered(body):
-	if body.name == 'Player':
+	if body.is_in_group("Player"):
 		attacking = true
 
 func _on_AttackZone_body_exited(body):
-	if body.name == 'Player':
+	if body.is_in_group("Player"):
 		attacking = false
 	state = pick_random_state([IDLE, WANDER])
