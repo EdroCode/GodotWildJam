@@ -5,7 +5,7 @@ export var ACCELERATION = 300
 export var MAX_SPEED = 50
 export var FRICTION = 200
 export var WANDER_TARGET_RANGE = 4
-signal attack_player
+var attack_player = false
 enum {
 	IDLE,
 	WANDER,
@@ -46,7 +46,7 @@ func _physics_process(delta):
 			else:
 				state = IDLE
 		ATTACK:
-			emit_signal("attack_player")
+			attack_player = true
 	
 	velocity = move_and_slide(velocity)
 
@@ -66,11 +66,3 @@ func update_wander():
 	state = pick_random_state([IDLE, WANDER])
 	wanderController.start_wander_timer(1)
 
-func _on_AttackZone_body_entered(body):
-	if body.is_in_group("Player"):
-		attacking = true
-
-func _on_AttackZone_body_exited(body):
-	if body.is_in_group("Player"):
-		attacking = false
-	state = pick_random_state([IDLE, WANDER])

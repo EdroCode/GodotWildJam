@@ -7,6 +7,7 @@ export var numberOfItems : int
 export (int) var item_val
 signal _add_item
 export(Texture) var texture
+export(PackedScene) var particle
 
 
 func _physics_process(delta):
@@ -65,7 +66,7 @@ func _on_SearchZone_body_exited(body):
 
 func leaf_particle():
 	
-	var p = preload("res://Game/Scenes/Particles/leafparticle1.tscn").instance()
+	var p = particle.instance()
 	p.position = position
 	get_parent().add_child(p)
 	

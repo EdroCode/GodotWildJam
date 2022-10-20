@@ -15,9 +15,6 @@ func attack():
 	print("Gotcha!")
 	emit_signal("kill_player")
 
-func _on_Enemy_attack_player():
-	attack()
-	pass # Replace with function body.
 
 
 
@@ -35,7 +32,9 @@ func _physics_process(delta):
 	
 	
 	
-	
+	if attack_player == true:
+		
+		attack()
 	
 	if velocity.y >= 0.01:
 		
@@ -83,6 +82,25 @@ func shake():
 	
 	Globals.camera.shake(300, .5, 300)
  
+
+
+
+func _on_AttackZone_body_entered(body):
+	
+	
+	if body.is_in_group("Player"):
+		attacking = true
+
+func _on_AttackZone_body_exited(body):
+	if body.is_in_group("Player"):
+		attacking = false
+	state = pick_random_state([IDLE, WANDER])
+
+
+
+
+
+
 
 
 #==============================

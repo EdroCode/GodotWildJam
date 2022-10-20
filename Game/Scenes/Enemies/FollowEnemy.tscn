@@ -13,7 +13,7 @@ radius = 62.55
 radius = 319.0
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 150, 150 )
+extents = Vector2( 121.25, 151.25 )
 
 [sub_resource type="Animation" id=6]
 resource_name = "Idle"
@@ -183,6 +183,8 @@ shape = SubResource( 2 )
 [node name="AttackZone" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackZone"]
+position = Vector2( 1.25001, 0 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
