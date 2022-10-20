@@ -27,7 +27,7 @@ func Search():
 			emit_signal("_add_item", 0, item_val)
 	elif numberOfItems <= 0:
 		numberOfItems = 0
-		print("You alredy search this")
+		print("You already searched this")
 
 func restart():
 	numberOfItems = 1

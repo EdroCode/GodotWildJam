@@ -8,8 +8,10 @@ var vel = Vector2.ZERO
 var speed = 200
 var acceleration = 2000
 var friction = acceleration / speed
+var in_ui = false
 
 signal quick_check
+signal call_inv_menu
 
 onready var anim = $AnimationPlayer
 
@@ -38,6 +40,11 @@ func _state_idle(delta):
 		_initialize_run()
 	if Input.is_action_pressed("quick_check"):
 		emit_signal("quick_check")
+	if Input.is_action_pressed("inventory"):
+		if in_ui:
+			emit_signal("call_inv_menu")
+		else:
+			emit_signal("call_inv_menu")
 
 func _initialize_run():
 	state_nxt = STATES.RUN

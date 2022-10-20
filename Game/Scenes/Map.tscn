@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Assets/Untitled_Artwork.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Game/Script/World/World.gd" type="Script" id=4]
 [ext_resource path="res://Game/Scenes/Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Scenes/PickUps/Rubbish.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Scenes/UI/GUI.tscn" type="PackedScene" id=7]
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 4 )
@@ -26,5 +27,9 @@ position = Vector2( 500, 200 )
 
 [node name="Bush" parent="." instance=ExtResource( 3 )]
 position = Vector2( 900, 300 )
+
+[node name="GUI" parent="." instance=ExtResource( 7 )]
+pause_mode = 2
+visible = false
 
 [connection signal="kill_player" from="Enemy" to="." method="_on_Enemy_kill_player"]
