@@ -25,5 +25,5 @@ func craft(item_arr, wanted_item):
 			if !Recipes[wanted_item].has(item):
 				return Items.BAD_ITEM
 		return wanted_item
-	else: 
+	else:
 		return Items.BAD_ITEM
