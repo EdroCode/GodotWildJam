@@ -9,6 +9,7 @@ signal _add_item
 export(Texture) var texture
 export(PackedScene) var particle
 
+var search_sound = preload("res://Game/Assets/Sound/Search_1.wav")
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_page_down"):
@@ -23,6 +24,11 @@ func _physics_process(delta):
 func Search():
 	
 	$AnimationPlayer.play("Searching")
+	
+	if !$AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.stream = search_sound
+		$AudioStreamPlayer2D.play()
+	
 	var luck = int(rand_range(0,2))
 	if numberOfItems > 0:
 		if luck == 0:
