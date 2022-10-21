@@ -4,26 +4,26 @@ var canSearch : bool = false
 var playerIsInArea : bool = false
 var vals = preload("res://Game/Script/Inventory/ItemVars.gd").new()
 export var numberOfItems : int
-export (int) var item_val
+export(int) var item_val
 signal _add_item
 export(Texture) var texture
 export(PackedScene) var particle
 
-
-func _physics_process(delta):
+func _unhandled_input(event):
 	if Input.is_action_just_pressed("ui_page_down"):
 		restart()
 	if Input.is_action_just_pressed("Search"):
 		if playerIsInArea == true:
 			Search()
-	
-	
-	$Sprite.texture = texture
+
+func _physics_process(delta):
+	pass
+	#$Sprite.texture = texture
 
 func Search():
 	
-	$AnimationPlayer.play("Searching")
-	var luck = int(rand_range(0,2))
+	#$AnimationPlayer.play("Searching")
+	var luck = 1
 	if numberOfItems > 0:
 		if luck == 0:
 			
