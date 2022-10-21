@@ -1,35 +1,31 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Assets/Untitled_Artwork.png" type="Texture" id=2]
-[ext_resource path="res://Game/Scenes/Interactables/Bush.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Game/Script/World/World.gd" type="Script" id=4]
-[ext_resource path="res://Game/Scenes/Enemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Game/Scenes/PickUps/Rubbish.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Game/Scenes/UI/GUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Scenes/Bush.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Scenes/PickUps.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Script/Map.gd" type="Script" id=5]
 
 [node name="Map" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="UntitledArtwork" type="Sprite" parent="."]
 position = Vector2( 603, 297 )
 texture = ExtResource( 2 )
 
+[node name="Bush" parent="." instance=ExtResource( 3 )]
+position = Vector2( 871, 324 )
+numberOfItems = 1
+
+[node name="Bush2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 215, 235 )
+numberOfItems = 1
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 588, 326 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 100, 400 )
+[node name="PickUps" parent="." instance=ExtResource( 4 )]
+position = Vector2( 288, 429 )
 
-[node name="Rubbish" parent="." instance=ExtResource( 6 )]
-position = Vector2( 500, 200 )
-
-[node name="Bush" parent="." instance=ExtResource( 3 )]
-position = Vector2( 900, 300 )
-
-[node name="GUI" parent="." instance=ExtResource( 7 )]
-pause_mode = 2
-visible = false
-
-[connection signal="kill_player" from="Enemy" to="." method="_on_Enemy_kill_player"]
+[node name="UI" type="CanvasLayer" parent="."]
