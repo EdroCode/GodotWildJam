@@ -12,13 +12,13 @@ size_flags_vertical = 3
 script = ExtResource( 2 )
 
 [node name="ItemTextureRect" type="TextureRect" parent="."]
-margin_left = 151.0
-margin_top = 81.0
-margin_right = 169.0
-margin_bottom = 99.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 487.0
+margin_top = 275.0
+margin_right = 537.0
+margin_bottom = 325.0
+rect_min_size = Vector2( 50, 50 )
 texture = ExtResource( 1 )
-stretch_mode = 4
+stretch_mode = 5
 
 [node name="ItemAmountLabel" type="Label" parent="ItemTextureRect"]
 anchor_left = 1.0
