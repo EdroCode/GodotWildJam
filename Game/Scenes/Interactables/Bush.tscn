@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Game/Assets/Untitled_Artwork-2.png" type="Texture" id=1]
+[ext_resource path="res://Game/Assets/Background assets/leafpile.png" type="Texture" id=1]
 [ext_resource path="res://Game/Script/Interactables/Bush.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -15,7 +15,6 @@ script = ExtResource( 2 )
 item_val = 4
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 0, -66 )
 texture = ExtResource( 1 )
 
